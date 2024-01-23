@@ -14,7 +14,7 @@ const App = () => {
 
   const handleSearch = async (title) => {
     try {
-      const response = await axios.get(`https://localhost:7247/Movie/search/${title}`);
+      const response = await axios.get(`https://moviesearchapi-app.azurewebsites.net/Movie/search/${title}`);
       const data = response.data;
   
       if (data && data.searchResult) {
@@ -36,7 +36,7 @@ const App = () => {
 
   const handleSelectMovie = async (imdbID) => {
     try {
-      const response = await axios.get(`https://localhost:7247/Movie/details/${imdbID}`);
+      const response = await axios.get(`https://moviesearchapi-app.azurewebsites.net/Movie/details/${imdbID}`);
       setSelectedMovie(response.data);
     } catch (error) {
       console.error('Error fetching movie details:', error);
